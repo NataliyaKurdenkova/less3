@@ -13,23 +13,27 @@ public class Test2 {
     private boolean result;
     private int[] a;
 
-    public Test2(boolean result, int[] a) {
-        this.result = result;
+    public Test2(int[] a,boolean result) {
+
         this.a = a;
+        this.result = result;
     }
+
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {false, new int[]{1, 1, 1, 4, 5, 1, 4, 4}},
-                {true, new int[]{1, 1, 4, 4}},
-                {false, new int[]{4, 4, 4, 4, 4, 4, 4, 4, 4}}
+                {new int[]{1, 1, 1, 4, 5, 1, 4, 4},false},
+                { new int[]{1, 1, 4, 4},true},
+                {new int[]{4, 4, 4, 4, 4, 4, 4, 4, 4},true}
         });
     }
 
 
     @Test
-    public void test1(){
-        Assert.assertArrayEquals(result, MainHW.OneAndFour(a));
+    public void test2(){
+        {
+            Assert.assertEquals(MainHW.OneAndFour(a), result);
+        }
     }
 }
