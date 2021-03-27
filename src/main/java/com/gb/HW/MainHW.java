@@ -33,6 +33,9 @@ public class MainHW {
         // System.out.println(Arrays.toString(arrFour(new int[]{7, 5, 1})));
         System.out.println(OneAndFour(new int[]{1, 1, 1, 4, 5, 1, 4, 4}));
         System.out.println(OneAndFour(new int[]{1, 1, 1, 4, 4, 1, 4, 4}));
+        System.out.println(OneAndFour(new int[]{1, 1, 1}));
+        System.out.println(OneAndFour(new int[]{4, 4, 4, 4}));
+
 
     }
 
@@ -46,12 +49,18 @@ public class MainHW {
     public static boolean OneAndFour(int[] arr) {
         int sim1 = 1;
         int sim2 = 4;
+        int count1=0;
+        int count4=0;
         for (int i = 0; i < arr.length; i++) {
-
-            if (!(Arrays.asList(arr[i]).contains(sim1)) && (!(Arrays.asList(arr[i]).contains(sim2)))) {
-                  return false;
+            if ((Arrays.asList(arr[i]).contains(sim1)))count1++;
+            if ((Arrays.asList(arr[i]).contains(sim2)))count4++;
+            if (!(Arrays.asList(arr[i]).contains(sim1))&&(!(Arrays.asList(arr[i]).contains(sim2)))){
+                return false;
             }
-        }return true;
+
+
+        }if((count1==arr.length)||(count4==arr.length))return false;
+        return true;
     }
 
 }

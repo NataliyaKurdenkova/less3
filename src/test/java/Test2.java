@@ -25,7 +25,9 @@ public class Test2 {
         return Arrays.asList(new Object[][]{
                 {new int[]{1, 1, 1, 4, 5, 1, 4, 4},false},
                 { new int[]{1, 1, 4, 4},true},
-                {new int[]{4, 4, 4, 4, 4, 4, 4, 4, 4},true}
+                {new int[]{4, 4, 4, 4},false},
+                {new int[]{ 1, 4, 4, 1, 1, 4, 3},false},
+                {new int[]{1, 1, 1, 1},false}
         });
     }
 
